@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
     branches:
-      - master
+      - main
     types: [opened, synchronize]
 
 name: Terraform pipeline
@@ -15,7 +15,7 @@ jobs:
     name: checkov-action
     steps:
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
 
       - name: Run Checkov action
         id: checkov
